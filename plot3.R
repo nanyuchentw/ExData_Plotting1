@@ -1,4 +1,7 @@
-library(tidyverse)
+if (!"tidyverse" %in% (.packages())){
+        library(tidyverse)
+}
+
 df <- read.table(file="household_power_consumption.txt", header = TRUE, sep=";")
 df <- df %>% mutate (Date_Time= paste(Date, Time))
 df$Date <- dmy(df$Date)
