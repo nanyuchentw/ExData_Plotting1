@@ -1,4 +1,7 @@
-library(tidyverse)
+if (!"tidyverse" %in% (.packages())){
+        library(tidyverse)
+}
+
 # Read in data
 df <- read.table(file="household_power_consumption.txt", header = TRUE, sep=";")
 # Add a new column to store the datetime
