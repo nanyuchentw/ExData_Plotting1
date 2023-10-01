@@ -1,4 +1,6 @@
-library(tidyverse)
+if (!"tidyverse" %in% (.packages())){
+        library(tidyverse)}
+
 df <- read.table(file="household_power_consumption.txt", header = TRUE, sep=";")
 df$Date <- dmy(df$Date)
 df1 <- df %>% filter (Date ==  ymd("2007-02-01") | Date ==  ymd("2007-02-02") )
